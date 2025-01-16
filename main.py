@@ -56,14 +56,14 @@ def delete_old_files():
 
     current_time = time.time()
     for file in stored_file_list:
-        if os.path.getmtime(file) < current_time - 60 * 120:  # 1 hour ago
+        if os.path.getmtime(file) < current_time - 60 * 10:  # 1 hour ago
             os.remove(file)
             print(f"Delete file: {file}")
 
     refresh_items()
 
     # Set the timer to run again in 1 hour
-    threading.Timer(60 * 360, delete_old_files).start()
+    threading.Timer(60 * 3, delete_old_files).start()
 
 
 # disable the items
