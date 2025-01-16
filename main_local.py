@@ -19,7 +19,7 @@ def txt_to_excel(_txt_list):
 
 if __name__ == '__main__':
     excel_path = 'output.xlsx'
-    txt_list = glob.glob('./**/*.txt', recursive=True)
+    txt_list = glob.glob('./**/*-*.txt', recursive=True)
 
     merged_df = txt_to_excel(txt_list)
     merged_df.to_excel(excel_path, index=False, engine='openpyxl')  # 使用 openpyxl 保存为 Excel
